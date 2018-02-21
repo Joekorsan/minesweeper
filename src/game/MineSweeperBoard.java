@@ -122,11 +122,12 @@ public class MineSweeperBoard {
 	public char appearance(Position p) {
 		int x = p.getX();
 		int y = p.getY();
+		//System.out.println("x: " +x +"y: "+y);
 
-		if (flagged[y][x]) {
+		if (flagged[x][y]) {
 			return '/';
-		} else if (revealed[y][x]) {
-			if (mined[y][x]) {
+		} else if (revealed[x][y]) {
+			if (mined[x][y]) {
 				// Boom!
 				return '*';
 			} else {
